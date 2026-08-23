@@ -1,0 +1,61 @@
+# ── Config du bot Vinted ─────────────────────────────────────────────
+# Webhook Discord (Paramètres du salon > Intégrations > Webhooks > Créer un webhook)
+discord_webhook: "https://discord.com/api/webhooks/XXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+# Domaine Vinted à utiliser (fr, de, es, it, be, ...)
+domain: "www.vinted.fr"
+
+# Intervalle entre deux vérifications des nouvelles annonces (secondes)
+poll_interval_seconds: 30
+
+# Tous les combien de cycles on recalcule le prix médian du marché
+# (ex: 20 cycles * 180s = ~1h). Évite de spammer l'API juste pour ça.
+market_price_refresh_cycles: 20
+
+# Un article est un "bon plan" si son prix est au moins X% en dessous
+# du prix médian du marché pour cette recherche.
+discount_threshold: 0.30
+
+# État des articles à conserver (appliqué à toutes les recherches, sauf si
+# une recherche précise son propre "status_ids" pour override).
+# IDs Vinted : 1=Neuf avec étiquette, 2=Neuf sans étiquette,
+#              3=Très bon état, 4=Bon état, 5=Satisfaisant
+# Ici : Bon état, Très bon état, Neuf sans étiquette (on exclut neuf AVEC
+# étiquette et satisfaisant).
+status_ids: [2, 3, 4]
+
+# ── Découverte automatique de niches ─────────────────────────────────
+# Le bot scanne périodiquement une liste de mots-clés larges et repère
+# ceux où le ratio "bonnes affaires / annonces" est le plus élevé, puis
+# t'envoie un résumé sur Discord. C'est un indicateur, pas une garantie
+# de rentabilité — sert à te donner des pistes de recherches à ajouter.
+niche_discovery:
+  enabled: true
+  interval_hours: 6
+  top_n_report: 5
+  seeds:
+    - "nike"
+    - "carhartt"
+    - "north face"
+    - "levis"
+    - "adidas"
+    - "stussy"
+    - "new balance"
+    - "ralph lauren"
+
+# ── Recherches surveillées ───────────────────────────────────────────
+# Ajoute autant de blocs "watches" que tu veux.
+watches:
+  - name: "Nike Air Max 90"
+    search_text: "nike air max 90"
+    max_price: 80          # optionnel : plafond dur, met à null pour désactiver
+    catalog_ids: []         # optionnel : IDs de catégorie Vinted
+    brand_ids: []           # optionnel : IDs de marque Vinted
+    size_ids: []            # optionnel : IDs de taille Vinted
+
+  - name: "Carhartt Detroit Jacket"
+    search_text: "carhartt detroit jacket"
+    max_price: null
+    catalog_ids: []
+    brand_ids: []
+    size_ids: []
