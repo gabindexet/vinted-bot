@@ -5,7 +5,7 @@ Surveille des recherches Vinted, calcule le prix médian du marché pour
 chacune, et envoie sur Discord les annonces dont le prix est nettement
 en dessous de ce médian (= bon plan).
 """
-
+from __future__ import annotations
 import json
 import logging
 import random
