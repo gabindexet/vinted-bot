@@ -1,6 +1,6 @@
 # ── Config du bot Vinted ─────────────────────────────────────────────
 # Webhook Discord (Paramètres du salon > Intégrations > Webhooks > Créer un webhook)
-discord_webhook: "https://discord.com/api/webhooks/XXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+discord_webhook: "https://discord.com/api/webhooks/1541094464108625941/vmrXHiArXunmzd2xQQQk0-2xb-M8EhPZDe3Xnxa5t8Z-GEqrgORulupsCQD8PzJwQqN1"
 
 # Domaine Vinted à utiliser (fr, de, es, it, be, ...)
 domain: "www.vinted.fr"
