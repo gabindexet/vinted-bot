@@ -1,0 +1,32 @@
+# ── Discord ───────────────────────────────────────────────────────────
+# Token du bot Discord (Developer Portal > Bot > Reset Token > Copy).
+# ⚠️ Différent d'un webhook : ce token donne un contrôle bien plus large
+# (le bot peut lire/envoyer des messages, exécuter des commandes). Garde
+# le repo privé, ne le partage nulle part.
+discord_bot_token: "MTU0MTE5NjYxNzgwODM1NTM1MA.G-t9dE.LRP4svJDSjIcGSWs6v4W7sxMVGwXmIHMujpAMo"
+
+# Préfixe des commandes (!watch add, !stats today, etc.)
+command_prefix: "!"
+
+# Noms des salons Discord (doivent exister sur ton serveur, en minuscules
+# avec des tirets, ex: #alertes-achat). Le bot les cherche par nom.
+channels:
+  alertes_achat: "alertes-achat"
+  stats_journalieres: "stats-journalieres"
+  commandes_bot: "commandes-bot"
+  erreurs: "erreurs"
+  roadmap: "roadmap-serveur"
+
+# ── Vinted ────────────────────────────────────────────────────────────
+domain: "www.vinted.fr"
+poll_interval_seconds: 45          # entre 30 et 60s comme demandé
+market_price_refresh_cycles: 20    # tous les combien de cycles on rafraîchit le prix marché
+
+# État par défaut des articles (voir niches.yaml / commandes !watch add)
+# IDs Vinted : 1=Neuf avec étiquette, 2=Neuf sans étiquette,
+#              3=Très bon état, 4=Bon état, 5=Satisfaisant
+default_status_ids: [2, 3, 4]
+
+# ── Pricing Engine (F2) ──────────────────────────────────────────────
+default_min_margin_pct: 120
+default_max_rotation_days: 14
