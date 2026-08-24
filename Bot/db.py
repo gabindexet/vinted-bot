@@ -37,14 +37,16 @@ def add_watch(
     condition_min: list[int] | None = None,
     target_rotation_days: int = 10,
     min_margin_pct: float = 120,
+    alert_channel: str | None = None,
 ) -> int:
     conn = get_conn()
     cur = conn.execute(
         """
         INSERT INTO watches
             (name, keywords, max_price, category, target_brands, sizes,
-             colors, condition_min, target_rotation_days, min_margin_pct)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+             colors, condition_min, target_rotation_days, min_margin_pct,
+             alert_channel)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             name,
@@ -57,6 +59,7 @@ def add_watch(
             json.dumps(condition_min or []),
             target_rotation_days,
             min_margin_pct,
+            alert_channel,
         ),
     )
     conn.commit()
@@ -196,4 +199,3 @@ def get_setting(key: str, default: str | None = None) -> str | None:
     row = conn.execute("SELECT value FROM settings WHERE key = ?", (key,)).fetchone()
     conn.close()
     return row["value"] if row else default
-  
