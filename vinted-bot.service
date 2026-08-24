@@ -6,7 +6,8 @@ Wants=network-online.target
 [Service]
 Type=simple
 WorkingDirectory=/home/ubuntu/vinted-bot
-ExecStart=/home/ubuntu/vinted-bot/venv/bin/python3 /home/ubuntu/vinted-bot/main.py
+
+ExecStart=/home/ubuntu/vinted-bot/venv/bin/python3 /home/ubuntu/vinted-bot/Bot/discord_bot.py
 Restart=on-failure
 RestartSec=30
 User=ubuntu
