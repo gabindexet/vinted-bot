@@ -7,7 +7,7 @@ Wants=network-online.target
 Type=simple
 WorkingDirectory=/home/ubuntu/vinted-bot
 
-ExecStart=/home/ubuntu/vinted-bot/venv/bin/python3 /home/ubuntu/vinted-bot/Bot/discord_bot.py
+ExecStart=/home/ubuntu/vinted-bot/venv/bin/python3 -m Bot.discord_bot
 Restart=on-failure
 RestartSec=30
 User=ubuntu
